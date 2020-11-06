@@ -1,3 +1,40 @@
 <div class="container">
-  <h1 class="danger">Hi I now have boostrap</h1>
+  <div class="row">
+    <div class="col">
+      <div class='hero-text text-center mt-2 mb-1'>
+        <h1>Task Management</h1>
+      </div>
+      <form class="text-center mb-5">
+        <div class="row">
+        <div class="col-lg-5 offset-lg-3">
+
+          <input type="text" class="form-control" name="task" [(ngModel)]="inputValue">
+        </div>
+        <div class="col-lg-2">
+          <button class="btn btn-primary" (click)="onCreateTask()">Add</button>
+        </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+ <div>
+   <div class="table-display mt-1" *ngFor="let val of value">
+   <div class="row" >
+     <div class="col-lg-4 offset-lg-3">
+       <div class="d-flex algin-items-center p-2" ><span>{{ val }}</span></div>
+     </div>
+     <div class="col-lg-1">
+       <button class="btn btn-primary" (click)="updateTask(val)">
+         Edit
+       </button>
+     </div>
+     <div class="col-lg-1">
+      <button (click)="deleteTask(val)" class="btn btn-danger">
+      Delete
+      </button>
+    </div>
+  </div>
+   </div>
+ </div>
 </div>
